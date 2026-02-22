@@ -11,8 +11,8 @@ import SkirtCombinations from './pages/SkirtCombinations';
 import PantCombinations from './pages/PantCombinations';
 import Suits from './pages/Suits';
 import RamadanDresses from './pages/RamadanDresses';
-import Abayas from './pages/Abayas';
-import Accessories from './pages/Accessories';
+import Abayas from './pages/abayas';
+import Accessories from './pages/accessories';
 import { RefreshCw, Heart, Star } from 'lucide-react';
 
 // مكون فرعي للتحكم في التنقل داخل الـ Router

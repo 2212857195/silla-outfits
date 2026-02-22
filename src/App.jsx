@@ -142,49 +142,11 @@ const MainContent = () => {
   );
 };
 
-const InAppBrowserBanner = () => {
-  const [showBanner, setShowBanner] = useState(false);
-
-  useEffect(() => {
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-    // الكشف عما إذا كان المستخدم داخل تيك توك أو إنستغرام أو سناب شات
-    const isInApp = /TikTok|Instagram|FBAN|FBAV|Snapchat/i.test(ua);
-    if (isInApp) {
-      setShowBanner(true);
-    }
-  }, []);
-
-  if (!showBanner) return null;
-
-  return (
-    <div className="relative z-[100] bg-[#ff8da1] text-white py-3 px-4 text-center text-xs sm:text-sm font-bold shadow-lg animate-bounce-subtle" dir="rtl">
-      <div className="flex items-center justify-center gap-2">
-        <span>لضمان حفظ الطلب، اضغطي على (•••) واختاري "الفتح في المتصفح"</span>
-        <button 
-          onClick={() => setShowBanner(false)}
-          className="bg-white/20 hover:bg-white/40 rounded-full p-1 px-2 transition-colors"
-        >
-          تم
-        </button>
-      </div>
-      <style jsx>{`
-        @keyframes bounce-subtle {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-3px); }
-        }
-        .animate-bounce-subtle {
-          animation: bounce-subtle 2s ease-in-out infinite;
-        }
-      `}</style>
-    </div>
-  );
-};
-
 function App() {
   return (
     <Router>
       <div className="min-h-screen relative bg-[#fff5f8] font-sans overflow-x-hidden">
-        <InAppBrowserBanner />
+        
         {/* خلفية Girly لطيفة (قلوب ونجوم مبعثرة) */}
         <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
            <Heart className="absolute top-20 left-[10%] text-[#f8bbd0]" size={40} />

@@ -1,0 +1,51 @@
+/* src/ViralSection.css */
+
+.viral-section {
+  padding: 20px;
+  /* خلفية داكنة جداً للصفحة لتوضيح النيون */
+  background-color: #050510; 
+  color: white;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border-left: 4px solid #ffff00; /* خط أصفر بجانب العنوان */
+  background: linear-gradient(90deg, #00f2ff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* حاوية المنتجات (السلايدر) */
+.slider-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* يسمح بالسكرول الأفقي */
+  padding-bottom: 20px; /* مساحة للظل السفلي */
+  
+  /* إخفاء شريط التمرير للمظهر الجمالي */
+  scrollbar-width: none; /* Firefox */
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* ميديا كويري للأجهزة الأكبر (لابتوب/ايباد) */
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    border-left: none;
+    border-bottom: 2px solid #ffff00;
+    display: inline-block;
+  }
+  
+  .slider-container {
+    justify-content: center; /* توسيط المنتجات إذا كانت قليلة */
+    flex-wrap: wrap; /* السماح بالنزول لسطر جديد في الشاشات الكبيرة */
+  }
+}

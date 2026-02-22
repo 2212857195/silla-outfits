@@ -1,0 +1,93 @@
+.viral-section {
+  padding: 40px 20px;
+  background-color: #f8f9fa; /* خلفية فاتحة نظيفة للموقع */
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #000;
+  position: relative;
+}
+
+/* خط تزييني تحت العنوان */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff00ff, #00f2ff);
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+/* حاوية السلايدر */
+.slider-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.slider-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth; /* حركة ناعمة */
+  padding: 20px 5px; /* مساحة للظل */
+  
+  /* إخفاء السكرول بار */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  /* خاصية السناب (عشان يوقف ع البطاقة بالضبط في الموبايل) */
+  scroll-snap-type: x mandatory;
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* أزرار التنقل (تظهر فقط في الشاشات الكبيرة) */
+.nav-btn {
+  background: #fff;
+  border: 1.5px solid #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 3px 3px 0px #000;
+  z-index: 10;
+}
+
+.nav-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+/* إخفاء الأزرار في الموبايل */
+.desktop-controls {
+  display: none; 
+  gap: 10px;
+}
+
+/* إظهار الأزرار في الشاشات الأكبر من 768px */
+@media (min-width: 768px) {
+  .desktop-controls {
+    display: flex;
+  }
+}
